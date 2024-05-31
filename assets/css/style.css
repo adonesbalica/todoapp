@@ -39,6 +39,7 @@ body {
     color: var(--primary-color);
     font-weight: bold;
     border-color: var(--primary-color);
+    border-radius: 5px;
     width: 100%;
     padding: 0 1em;
     outline: none;
