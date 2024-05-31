@@ -4,35 +4,39 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Todo App</title>
+        <link rel="stylesheet" href="reset.css" />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
         <div id="container">
             <header class="header-container">
                 <h1>Todo List</h1>
             </header>
-            <section class="search-section">
-                <div class="search-bar">
-                    <input type="search" placeholder="Note" name="note" id="note" />
-                    <img src="./assets/img/search_icon.svg" alt="search icon" />
-                </div>
-
-                <div class="dropdown">
-                    <div class="select">
-                        <span class="selected">All</span>
-                        <div class="caret"></div>
+            <main id="main">
+                <section class="search-section">
+                    <div class="search-bar">
+                        <input type="search" placeholder="Note" name="note" id="note" />
+                        <img src="./assets/img/search_icon.svg" alt="search icon" />
                     </div>
 
-                    <ul class="menu">
-                        <li class="active">All</li>
-                        <li>Completed</li>
-                        <li>Incompleted</li>
-                    </ul>
-                </div>
+                    <div class="dropdown">
+                        <div class="select">
+                            <span class="selected">All</span>
+                            <div class="caret"></div>
+                        </div>
 
-                <div id="toggle-theme-container">
-                    <img src="./assets/img/moon_vector.svg" alt="darkmode toggle" />
-                </div>
-            </section>
+                        <ul class="menu">
+                            <li class="active">All</li>
+                            <li>Completed</li>
+                            <li>Incompleted</li>
+                        </ul>
+                    </div>
+
+                    <div id="toggle-theme-container">
+                        <img src="./assets/img/moon_vector.svg" alt="darkmode toggle" />
+                    </div>
+                </section>
+            </main>
         </div>
     </body>
 </html>
