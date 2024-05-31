@@ -3,11 +3,11 @@ body {
     --primary-color: #6c63ff;
     --ligth-color: #f7f7f7;
     --black-color: #252525;
+    background-color: var(--ligth-color);
 }
 
 #main {
     margin: 0 auto;
-    text-align: center;
 }
 
 .header-container {
@@ -165,4 +165,54 @@ body {
 .menu-open {
     display: block;
     opacity: 1;
+}
+
+/* list */
+
+.todo-list {
+    display: flex;
+    margin: 2em auto;
+    max-width: 550px;
+    font-size: 1.2em;
+}
+
+.todo-list .list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.todo-list .list li {
+    display: flex;
+    width: 100%;
+    padding: 0.2em;
+    margin-top: 0.6em;
+    gap: 1em;
+    cursor: pointer;
+    border-bottom: 1px solid var(--primary-color);
+    font-weight: bold;
+}
+
+.todo-list .list li:last-child {
+    border: none;
+}
+
+.todo-list .list img {
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
+.todo-list .list span {
+    display: inline-block;
+}
+
+.todo-list .list span:last-child {
+    margin-left: auto;
+}
+
+.todo-list .list input {
+    cursor: pointer;
 }
