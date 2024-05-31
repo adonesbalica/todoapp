@@ -101,6 +101,7 @@ body {
 }
 
 .select-clicked {
+    box-shadow: 0 0 0.8em #7670ee;
     border: 2px var(--primary-color) solid;
 }
 
