@@ -19,6 +19,7 @@ const displayNotes = allNotes;
 
 function getInputText() {
     note = inputText.value;
+    if (note === '') return;
     allNotes.push(constructLiElement(note));
 
     displayNotes.forEach((note) => {
