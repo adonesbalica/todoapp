@@ -8,8 +8,10 @@ const selected = dropdown.querySelector('.selected');
 const inputText = document.querySelector('#note');
 const searchButton = document.querySelector('#search-button');
 const toggleDarkMode = document.querySelector('#toggle-theme-container');
+const toggleDarkModeImage = document.querySelector('#toggle-theme-image');
 
 let note;
+let toggle = false;
 
 function getInputText() {
     note = inputText.value;
@@ -17,8 +19,15 @@ function getInputText() {
 }
 
 function darkMode() {
+    toggle = !toggle;
     var element = document.body;
     element.classList.toggle('dark-mod');
+
+    if (toggle) {
+        toggleDarkModeImage.src = '../../assets/img/sun_vector.svg';
+    } else {
+        toggleDarkModeImage.src = './assets/img/moon_vector.svg';
+    }
 }
 
 select.addEventListener('click', () => {
