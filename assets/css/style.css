@@ -13,7 +13,11 @@ body {
     .search-bar input {
         color: var(--ligth-color);
         background-color: var(--black-color);
-        border-color: var(--black-color);
+        border-color: var(--ligth-color);
+    }
+
+    .search-bar svg path {
+        fill: var(--ligth-color);
     }
 
     .search-bar input:focus {
@@ -49,7 +53,7 @@ body {
     min-width: 550px;
 }
 
-.search-bar img {
+.search-bar svg {
     cursor: pointer;
     position: absolute;
     right: 10px;
