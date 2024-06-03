@@ -7,12 +7,18 @@ const options = dropdown.querySelectorAll('.menu li');
 const selected = dropdown.querySelector('.selected');
 const inputText = document.querySelector('#note');
 const searchButton = document.querySelector('#search-button');
+const toggleDarkMode = document.querySelector('#toggle-theme-container');
 
 let note;
 
 function getInputText() {
     note = inputText.value;
     console.log(note);
+}
+
+function darkMode() {
+    var element = document.body;
+    element.classList.toggle('dark-mod');
 }
 
 select.addEventListener('click', () => {
@@ -35,6 +41,8 @@ options.forEach((option) => {
 });
 
 searchButton.addEventListener('click', getInputText);
+
+toggleDarkMode.addEventListener('click', darkMode);
 
 inputText.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {

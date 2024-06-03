@@ -6,6 +6,26 @@ body {
     background-color: var(--ligth-color);
 }
 
+.dark-mod {
+    color: var(--ligth-color);
+    background-color: var(--black-color);
+
+    .search-bar input {
+        color: var(--ligth-color);
+        background-color: var(--black-color);
+        border-color: var(--black-color);
+    }
+
+    .search-bar input:focus {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(124, 124, 124, 0.5);
+    }
+
+    .search-bar input::placeholder {
+        color: var(--ligth-color);
+    }
+}
+
 #main {
     margin: 0 auto;
 }
