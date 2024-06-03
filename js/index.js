@@ -9,13 +9,23 @@ const inputText = document.querySelector('#note');
 const searchButton = document.querySelector('#search-button');
 const toggleDarkMode = document.querySelector('#toggle-theme-container');
 const toggleDarkModeImage = document.querySelector('#toggle-theme-image');
+const list = document.querySelector('.list');
 
 let note;
 let toggle = false;
 
+const allNotes = [];
+const displayNotes = allNotes;
+
 function getInputText() {
     note = inputText.value;
-    console.log(note);
+    allNotes.push(constructLiElement(note));
+
+    displayNotes.forEach((note) => {
+        list.appendChild(note);
+    });
+
+    console.log(allNotes[0]);
 }
 
 function darkMode() {
@@ -28,6 +38,29 @@ function darkMode() {
     } else {
         toggleDarkModeImage.src = './assets/img/moon_vector.svg';
     }
+}
+
+function constructLiElement(note) {
+    const li = document.createElement('li');
+    const input = document.createElement('input');
+    const span1 = document.createElement('span');
+    const span2 = document.createElement('span');
+    const img1 = document.createElement('img');
+    const img2 = document.createElement('img');
+
+    input.type = 'checkbox';
+    li.appendChild(input);
+    span1.textContent = note;
+    li.appendChild(span1);
+    img1.src = './assets/img/pen_vector.svg';
+    img1.alt = 'edit button';
+    img2.src = './assets/img/trash_vector.svg';
+    img2.alt = 'delete button';
+    span2.appendChild(img1);
+    span2.appendChild(img2);
+    li.appendChild(span2);
+
+    return li;
 }
 
 select.addEventListener('click', () => {
