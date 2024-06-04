@@ -57,14 +57,21 @@ function getActiveFilter() {
 
 function darkMode() {
     toggle = !toggle;
-    var element = document.body;
-    element.classList.toggle('dark-mod');
+    document.body.classList.toggle('dark-mod');
+
+    let isDarkmode = document.body.classList.contains('dark-mod');
+    window.localStorage.setItem('darkmode', isDarkmode);
 
     if (toggle) {
         toggleDarkModeImage.src = '../../assets/img/sun_vector.svg';
     } else {
         toggleDarkModeImage.src = './assets/img/moon_vector.svg';
     }
+}
+
+let darkmode = JSON.parse(window.localStorage.getItem('darkmode'));
+if (darkmode === true) {
+    document.body.classList.add('dark-mod');
 }
 
 function constructLiElement(note) {
