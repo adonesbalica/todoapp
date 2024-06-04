@@ -15,18 +15,44 @@ let note;
 let toggle = false;
 
 const allNotes = [];
-const displayNotes = allNotes;
+let displayNotes;
 
 function getInputText() {
     note = inputText.value;
     if (note === '') return;
-    allNotes.push(constructLiElement(note));
 
-    displayNotes.forEach((note) => {
+    allNotes.push(constructLiElement(note));
+    displayList(allNotes);
+}
+
+function displayList(listsOfNotes) {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+    listsOfNotes.forEach((note) => {
         list.appendChild(note);
     });
+}
+function getActiveFilter() {
+    const selectedFilter = document.querySelector('.selected').textContent.toLocaleLowerCase();
 
-    console.log(allNotes[0]);
+    switch (selectedFilter) {
+        case 'all':
+            displayList(allNotes);
+            break;
+        case 'completed':
+            displayNotes = allNotes.filter((element) => {
+                if (element.querySelector('input').checked) return element;
+            });
+            displayList(displayNotes);
+            break;
+        case 'incompleted':
+            displayNotes = allNotes.filter((element) => {
+                if (!element.querySelector('input').checked) return element;
+            });
+            displayList(displayNotes);
+            break;
+    }
 }
 
 function darkMode() {
@@ -82,10 +108,11 @@ options.forEach((option) => {
         option.classList.add('active');
     });
 });
-
-searchButton.addEventListener('click', getInputText);
+menu.addEventListener('click', getActiveFilter);
 
 toggleDarkMode.addEventListener('click', darkMode);
+
+searchButton.addEventListener('click', getInputText);
 
 inputText.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
