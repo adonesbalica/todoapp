@@ -18,10 +18,9 @@ const allNotes = [];
 let displayNotes;
 
 function getInputText() {
-    note = inputText.value;
-    if (note === '') return;
-
-    allNotes.push(constructLiElement(note));
+    if (inputText.value === '') return;
+    allNotes.push(constructLiElement(inputText.value));
+    inputText.value = '';
     displayList(allNotes);
 }
 
